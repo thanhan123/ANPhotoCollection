@@ -15,8 +15,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        let remoteManager = JSONRemoteManager()
+        let localManager = RealmManager()
+        let flickrDataManager = FlickrDataManager(remoteManager: remoteManager, localmanager: localManager)
+        let coordinator = Coordinator(dataManager: flickrDataManager)
+        let loginVC = coordinator.getLoginVC()
+        
+        window?.makeKeyAndVisible()
+        changeRootView(vc: loginVC)
+        
         return true
+    }
+    
+    func changeRootView(vc: UIViewController) {
+        
+        window?.rootViewController = vc
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
