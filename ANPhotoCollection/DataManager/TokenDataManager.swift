@@ -18,8 +18,12 @@ extension TokenDataManager where Self: DataManager {
     func getToken(sourceType: SourceType, parameter: LoginParameter) {
         switch sourceType {
         case .local:
-            localmanager.getObjects(type: TokenResponse.self, filter: "", sort: .asceding, completion: { (result) in
-                
+            localManager.getObjects(
+                type: TokenResponse.self,
+                filter: "",
+                sort: .asceding,
+                completion: { (result) in
+                    
             })
             
         case .remote:

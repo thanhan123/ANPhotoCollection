@@ -18,7 +18,7 @@ extension CountryDataManager where Self: DataManager {
     func getCountry(sourceType: SourceType, parameter: CountryParameter) {
         switch sourceType {
         case .local:
-            localmanager.getObjects(type: TokenResponse.self, filter: "", sort: .asceding, completion: { (result) in
+            localManager.getObjects(type: TokenResponse.self, filter: "", sort: .asceding, completion: { (result) in
                 
             })
             

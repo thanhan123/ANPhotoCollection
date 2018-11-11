@@ -21,18 +21,18 @@ enum SortType{
 protocol DataManager {
     
     var remoteManager: RemoteManager { get }
-    var localmanager: LocalManager  { get }
+    var localManager: LocalManager  { get }
 }
 
 class FlickrDataManager: DataManager {
     
     let remoteManager: RemoteManager
-    let localmanager: LocalManager
+    let localManager: LocalManager
     
     init(remoteManager: RemoteManager,
          localmanager: LocalManager) {
         self.remoteManager = remoteManager
-        self.localmanager = localmanager
+        self.localManager = localmanager
     }
 }
 

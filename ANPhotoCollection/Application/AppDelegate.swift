@@ -16,21 +16,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        if window == nil {
+            window = UIWindow(frame: UIScreen.main.bounds)
+            window?.makeKeyAndVisible()
+        }
+        
         let remoteManager = JSONRemoteManager()
         let localManager = RealmManager()
-        let flickrDataManager = FlickrDataManager(remoteManager: remoteManager, localmanager: localManager)
-        let coordinator = Coordinator(dataManager: flickrDataManager)
+        let flickrDataManager = FlickrDataManager(
+            remoteManager: remoteManager,
+            localmanager: localManager
+        )
+        let coordinator = Coordinator(
+            dataManager: flickrDataManager,
+            router: MainRouter(window: window)
+        )
         let loginVC = coordinator.getLoginVC()
-        
-        window?.makeKeyAndVisible()
-        changeRootView(vc: loginVC)
+        let navVC = UINavigationController(rootViewController: loginVC)
+        window?.rootViewController = navVC
         
         return true
-    }
-    
-    func changeRootView(vc: UIViewController) {
-        
-        window?.rootViewController = vc
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

@@ -1,21 +1,21 @@
 //
-//  UserDataManager.swift
+//  PhotosDataManager.swift
 //  ANPhotoCollection
 //
-//  Created by Dinh Thanh An on 10/27/18.
+//  Created by Dinh Thanh An on 11/11/18.
 //  Copyright © 2018 Dinh Thanh An. All rights reserved.
 //
 
 import Foundation
 
-protocol UserDataManager {
+protocol PhotosDataManager {
     
-    func getUser(sourceType: SourceType, parameter: UserParameter)
+    func getToken(sourceType: SourceType, parameter: LoginParameter)
 }
 
-extension UserDataManager where Self: DataManager {
+extension PhotosDataManager where Self: DataManager {
     
-    func getUser(sourceType: SourceType, parameter: UserParameter) {
+    func getToken(sourceType: SourceType, parameter: LoginParameter) {
         switch sourceType {
         case .local:
             localManager.getObjects(type: TokenResponse.self, filter: "", sort: .asceding, completion: { (result) in

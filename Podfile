@@ -7,6 +7,7 @@ target 'ANPhotoCollection' do
 
   # Pods for ANPhotoCollection
   pod "PromiseKit", "~> 6.0"
+  pod 'AloeStackView', "~> 1.0.1"
 
   target 'ANPhotoCollectionTests' do
     inherit! :search_paths

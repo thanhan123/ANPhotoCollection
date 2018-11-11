@@ -1,21 +1,21 @@
 //
-//  LoginViewController.swift
+//  DashboardVC.swift
 //  ANPhotoCollection
 //
-//  Created by Dinh Thanh An on 10/27/18.
+//  Created by Dinh Thanh An on 11/11/18.
 //  Copyright © 2018 Dinh Thanh An. All rights reserved.
 //
 
 import UIKit
 
-class LoginViewController: BaseViewController<LoginView>, LoginViewActionDelegate {
+class DashboardVC: BaseViewController<DashboardView> {
     
-    let logicController: LoginLogicController
+    let logicController: DashboardLogicController
     let coordinator: Coordinator
     let router: Router
-
+    
     // MARK: Override
-    init(logicController: LoginLogicController,
+    init(logicController: DashboardLogicController,
          coordinator: Coordinator,
          router: Router) {
         self.logicController = logicController
@@ -31,17 +31,6 @@ class LoginViewController: BaseViewController<LoginView>, LoginViewActionDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Login"
-        self.currentView.actionDelegate = self
-    }
-    
-    // MARK: LoginViewActionDelegate
-    func photoViewWasTapped() {
-        router.navigate(to: coordinator.getDashboardVC(), transitionType: .changeRootView)
-    }
-    
-    func descriptionLabelWasTapped() {
-        
+        currentView.setupView()
     }
 }
-
