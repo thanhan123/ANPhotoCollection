@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let localManager = RealmManager()
         let flickrDataManager = FlickrDataManager(
             remoteManager: remoteManager,
-            localmanager: localManager
+            localManager: localManager
         )
         let coordinator = Coordinator(
             dataManager: flickrDataManager,

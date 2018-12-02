@@ -10,12 +10,12 @@ import Foundation
 
 protocol PhotosDataManager {
     
-    func getToken(sourceType: SourceType, parameter: LoginParameter)
+    func getPhotos(sourceType: SourceType, parameter: LoginParameter)
 }
 
 extension PhotosDataManager where Self: DataManager {
     
-    func getToken(sourceType: SourceType, parameter: LoginParameter) {
+    func getPhotos(sourceType: SourceType, parameter: LoginParameter) {
         switch sourceType {
         case .local:
             localManager.getObjects(type: TokenResponse.self, filter: "", sort: .asceding, completion: { (result) in
@@ -23,7 +23,11 @@ extension PhotosDataManager where Self: DataManager {
             })
             
         case .remote:
-            remoteManager.makeAuthRequest()
+            remoteManager.makeAuthRequest(
+                endpoint: EndpointType.getPhotos,
+                handler: { result in
+                    
+            })
         }
     }
 }

@@ -23,7 +23,11 @@ extension CountryDataManager where Self: DataManager {
             })
             
         case .remote:
-            remoteManager.makeAuthRequest()
+            remoteManager.makeAuthRequest(
+                endpoint: EndpointType.getCountry,
+                handler: { result in
+                    
+            })
         }
     }
 }

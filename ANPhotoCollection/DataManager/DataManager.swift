@@ -20,61 +20,20 @@ enum SortType{
 
 protocol DataManager {
     
-    var remoteManager: RemoteManager { get }
-    var localManager: LocalManager  { get }
+    var remoteManager: RemoteDataManager { get }
+    var localManager: LocalDataManager  { get }
 }
 
 class FlickrDataManager: DataManager {
     
-    let remoteManager: RemoteManager
-    let localManager: LocalManager
+    let remoteManager: RemoteDataManager
+    let localManager: LocalDataManager
     
-    init(remoteManager: RemoteManager,
-         localmanager: LocalManager) {
+    init(remoteManager: RemoteDataManager,
+         localManager: LocalDataManager) {
         self.remoteManager = remoteManager
-        self.localManager = localmanager
+        self.localManager = localManager
     }
 }
 
 extension FlickrDataManager: TokenDataManager, UserDataManager, CountryDataManager {}
-
-// ======================
-protocol RemoteManager {
-    
-    func makePublicRequest()
-    func makeAuthRequest()
-}
-
-class JSONRemoteManager: RemoteManager {
-    
-    func makeAuthRequest() {
-        
-    }
-    
-    func makePublicRequest() {
-        
-    }
-}
-
-// ======================
-protocol LocalManager {
-    
-    func getObjects<T>(type: T, filter: String, sort: SortType, completion: @escaping ([T]) -> ())
-    func deleteObjects<T>(objects: [T])
-    func createOrUpdateObjects<T>(objects: [T])
-}
-
-class RealmManager: LocalManager {
-    
-    func getObjects<T>(type: T, filter: String, sort: SortType, completion: @escaping ([T]) -> ()) {
-        
-    }
-    
-    func deleteObjects<T>(objects: [T]) {
-        
-    }
-    
-    func createOrUpdateObjects<T>(objects: [T]) {
-        
-    }
-}

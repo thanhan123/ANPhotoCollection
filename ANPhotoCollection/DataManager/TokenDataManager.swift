@@ -27,7 +27,11 @@ extension TokenDataManager where Self: DataManager {
             })
             
         case .remote:
-            remoteManager.makeAuthRequest()
+            remoteManager.makeAuthRequest(
+                endpoint: EndpointType.getToken,
+                handler: { result in
+                    
+            })
         }
     }
 }

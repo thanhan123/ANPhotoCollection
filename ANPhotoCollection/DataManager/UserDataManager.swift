@@ -23,7 +23,11 @@ extension UserDataManager where Self: DataManager {
             })
             
         case .remote:
-            remoteManager.makeAuthRequest()
+            remoteManager.makeAuthRequest(
+                endpoint: EndpointType.getUser,
+                handler: { result in
+                    
+            })
         }
     }
 }

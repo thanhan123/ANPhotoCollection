@@ -23,7 +23,13 @@ protocol Router {
     func navigate(to vc: UIViewController, transitionType: SceneTransitionType)
 }
 
-extension Router {
+class MainRouter: Router {
+    
+    let window: UIWindow?
+    
+    init(window: UIWindow?) {
+        self.window = window
+    }
     
     func navigate(to vc: UIViewController, transitionType: SceneTransitionType) {
         switch transitionType {
@@ -36,14 +42,5 @@ extension Router {
         case .present(let fromVC, let animated, let completion):
             fromVC.present(vc, animated: animated, completion: completion)
         }
-    }
-}
-
-class MainRouter: Router {
-    
-    let window: UIWindow?
-    
-    init(window: UIWindow?) {
-        self.window = window
     }
 }

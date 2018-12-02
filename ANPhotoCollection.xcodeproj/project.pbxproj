@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		AC73950D1AEA147540433D86 /* Pods_ANPhotoCollectionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A0EA8BED9F133736C80116A /* Pods_ANPhotoCollectionTests.framework */; };
+		D142FA9B21B41DBA00E2E6DB /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = D142FA9A21B41DBA00E2E6DB /* Result.swift */; };
+		D142FA9D21B41F0000E2E6DB /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D142FA9C21B41F0000E2E6DB /* Endpoint.swift */; };
+		D142FA9F21B4227100E2E6DB /* RemoteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D142FA9E21B4227100E2E6DB /* RemoteDataManager.swift */; };
+		D142FAA121B422A900E2E6DB /* LocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D142FAA021B422A900E2E6DB /* LocalDataManager.swift */; };
 		D1C2D23C2197F85E00ADD575 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C2D23B2197F85E00ADD575 /* BaseController.swift */; };
 		D1C2D23E2197F87C00ADD575 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C2D23D2197F87C00ADD575 /* BaseView.swift */; };
 		D1C2D2402197F8DD00ADD575 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C2D23F2197F8DD00ADD575 /* LoginView.swift */; };
@@ -60,6 +64,10 @@
 		9874814077D1514C5E69604F /* Pods_ANPhotoCollectionUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ANPhotoCollectionUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B93D2D5D5D971F8DA759D673 /* Pods-ANPhotoCollection.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ANPhotoCollection.release.xcconfig"; path = "Pods/Target Support Files/Pods-ANPhotoCollection/Pods-ANPhotoCollection.release.xcconfig"; sourceTree = "<group>"; };
 		CB83B1BB61C65D3AC604CF92 /* Pods-ANPhotoCollectionTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ANPhotoCollectionTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ANPhotoCollectionTests/Pods-ANPhotoCollectionTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D142FA9A21B41DBA00E2E6DB /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		D142FA9C21B41F0000E2E6DB /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		D142FA9E21B4227100E2E6DB /* RemoteDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataManager.swift; sourceTree = "<group>"; };
+		D142FAA021B422A900E2E6DB /* LocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataManager.swift; sourceTree = "<group>"; };
 		D1C2D23B2197F85E00ADD575 /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
 		D1C2D23D2197F87C00ADD575 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		D1C2D23F2197F8DD00ADD575 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -294,6 +302,10 @@
 				D1EF11E621846EF10063AE6B /* UserDataManager.swift */,
 				D1EF11EA21846F4C0063AE6B /* CountryDataManager.swift */,
 				D1C2D24D2198266C00ADD575 /* PhotosDataManager.swift */,
+				D142FA9A21B41DBA00E2E6DB /* Result.swift */,
+				D142FA9C21B41F0000E2E6DB /* Endpoint.swift */,
+				D142FA9E21B4227100E2E6DB /* RemoteDataManager.swift */,
+				D142FAA021B422A900E2E6DB /* LocalDataManager.swift */,
 			);
 			path = DataManager;
 			sourceTree = "<group>";
@@ -618,15 +630,19 @@
 				D1EF11F12184759F0063AE6B /* TokenResponse.swift in Sources */,
 				D1EF11F321847AAA0063AE6B /* LoginLogicController.swift in Sources */,
 				D1C2D24621981E7A00ADD575 /* Router.swift in Sources */,
+				D142FAA121B422A900E2E6DB /* LocalDataManager.swift in Sources */,
+				D142FA9B21B41DBA00E2E6DB /* Result.swift in Sources */,
 				D1C2D2482198259800ADD575 /* DashboardVC.swift in Sources */,
 				D1EF11E0218425390063AE6B /* DataManager.swift in Sources */,
 				D1EF11EB21846F4C0063AE6B /* CountryDataManager.swift in Sources */,
 				D1EF11F62184A6510063AE6B /* Coordinator.swift in Sources */,
 				D1C2D24A219825AB00ADD575 /* DashboardView.swift in Sources */,
 				D1EF11AB218410430063AE6B /* AppDelegate.swift in Sources */,
+				D142FA9D21B41F0000E2E6DB /* Endpoint.swift in Sources */,
 				D1C2D24E2198266C00ADD575 /* PhotosDataManager.swift in Sources */,
 				D1C2D2512198275000ADD575 /* Config.swift in Sources */,
 				D1C2D23E2197F87C00ADD575 /* BaseView.swift in Sources */,
+				D142FA9F21B4227100E2E6DB /* RemoteDataManager.swift in Sources */,
 				D1EF11E22184255F0063AE6B /* TokenDataManager.swift in Sources */,
 				D1EF11E921846F0F0063AE6B /* UserParameter.swift in Sources */,
 			);
